@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-env --allow-read --allow-write karabiner_mods.ts --writeToProfile",
+    "json": "deno run karabiner_mods.ts > karabiner_mods.json",
+    "format": "deno fmt --check --ignore=README.md",
+    "lint": "deno lint"
+  },
+  "fmt": {
+    "lineWidth": 119,
+    "semiColons": false,
+    "singleQuote": true
+  },
+  "imports": {
+    "@std/cli": "jsr:@std/cli@^1.0.21",
+    "karabiner.ts": "npm:karabiner.ts@^1.33.0"
+  }
+}
