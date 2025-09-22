@@ -14,20 +14,29 @@ const maintainers = ['susumuota']
 const createMods = () => {
   return complexModifications(
     [
-      rule('Claude Desktop: map ⏎ to ⇧⏎').manipulators([
-        map('⏎')
-          .to('⏎', '⇧')
+      rule('Claude Desktop: map return to shift+return').manipulators([
+        map('return_or_enter')
+          .to('return_or_enter', 'shift')
           .condition(ifApp('^com\\.anthropic\\.claudefordesktop$')),
       ]),
       rule(
-        'Crush 80: map left⌘ to 英数, right⌘ to かな',
+        'Crush 80: map left_command to eisuu, right_command to kana',
         ifDevice([
           { vendor_id: 0x320f, product_id: 0x5055 },
           { vendor_id: 0x245a, product_id: 0x8276 },
         ]),
       ).manipulators([
-        map('<⌘', '??').to('<⌘').toIfAlone('japanese_eisuu'),
-        map('>⌘', '??').to('>⌘').toIfAlone('japanese_kana'),
+        map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
+        map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
+      ]),
+      rule(
+        'Eave 65: map left_command to eisuu, right_command to kana',
+        ifDevice([
+          { vendor_id: 0x4a16, product_id: 0x4a16 },
+        ]),
+      ).manipulators([
+        map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
+        map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
     ],
     { 'basic.to_if_alone_timeout_milliseconds': 10000 },
