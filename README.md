@@ -2,7 +2,7 @@
 
 ## For development
 
-To start a watch for file changes and automatically update `~/.config/karabiner/karabiner.json`,
+Watch for file changes and automatically update `~/.config/karabiner/karabiner.json`,
 
 ```shell
 deno run dev
