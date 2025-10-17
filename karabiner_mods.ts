@@ -40,10 +40,11 @@ const createMods = () => {
         map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
       rule(
-        'Kensington SlimBlade Pro EQ: swap mouse button 3 and 4',
+        'SlimBlade Pro EQ: swap mouse button 3 and 4 for KiCad',
         ifDevice([
           { vendor_id: 0x047d, product_id: 0x80d4 },
         ]),
+        ifApp(['^org\\.kicad\\..*$']),
       ).manipulators([
         mapPointingButton('button3').to({ pointing_button: 'button4' }),
         mapPointingButton('button4').to({ pointing_button: 'button3' }),
