@@ -4,6 +4,7 @@ import {
   ifApp,
   ifDevice,
   map,
+  mapPointingButton,
   rule,
   writeToProfile,
 } from 'https://deno.land/x/karabinerts/deno.ts'
@@ -38,9 +39,18 @@ const createMods = () => {
         map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
         map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
+      rule(
+        'Kensington SlimBlade Pro EQ: swap mouse button 3 and 4',
+        ifDevice([
+          { vendor_id: 0x047d, product_id: 0x80d4 },
+        ]),
+      ).manipulators([
+        mapPointingButton('button3').to({ pointing_button: 'button4' }),
+        mapPointingButton('button4').to({ pointing_button: 'button3' }),
+      ]),
     ],
-    { 'basic.to_if_alone_timeout_milliseconds': 10000 },
-  ) // 10 seconds
+    { 'basic.to_if_alone_timeout_milliseconds': 10000 }, // 10 seconds
+  )
 }
 
 const main = () => {
