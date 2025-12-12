@@ -2,7 +2,7 @@
   "version": "5",
   "specifiers": {
     "jsr:@std/cli@*": "1.0.23",
-    "npm:karabiner.ts@^1.35.1": "1.35.1"
+    "npm:karabiner.ts@^1.36.0": "1.36.0"
   },
   "jsr": {
     "@std/cli@1.0.23": {
@@ -10,8 +10,8 @@
     }
   },
   "npm": {
-    "karabiner.ts@1.35.1": {
-      "integrity": "sha512-ndykub6ifouFN6Mz4C6e6VWtCH70rBFmts7ci1QPWXUBOnbBV+aWUPKUcwttHxaLOdGCDlsBsqTSkMKVSUVmMA=="
+    "karabiner.ts@1.36.0": {
+      "integrity": "sha512-iXg3/yZ46XodUXu2+TrIkrtbR71UFXR1dhDwpF8R6vCgd5i2r2+H7evfwQZM970oPd04PWdJk5AhvJY/582M7Q=="
     }
   },
   "redirects": {
@@ -66,8 +66,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/cli@^1.0.23",
-      "npm:karabiner.ts@^1.35.1"
+      "jsr:@std/cli@^1.0.24",
+      "npm:karabiner.ts@^1.36.0"
     ]
   }
 }
