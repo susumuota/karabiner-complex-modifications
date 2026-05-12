@@ -15,7 +15,7 @@ const createMods = () => {
           .condition(ifApp('^com\\.anthropic\\.claudefordesktop$')),
       ]),
       rule(
-        'Crush 80: map left_command to eisuu, right_command to kana',
+        'Crush 80 and IQUNIX MQ80: map left_command to eisuu, right_command to kana',
         ifDevice([{ vendor_id: 0x320f, product_id: 0x5055 }, { vendor_id: 0x245a, product_id: 0x8276 }]),
       ).manipulators([
         map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
