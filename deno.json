@@ -12,6 +12,6 @@
   },
   "imports": {
     "@std/cli": "jsr:@std/cli@^1.0.29",
-    "karabiner.ts": "https://deno.land/x/karabinerts@1.36.0/deno.ts"
+    "karabiner.ts": "https://deno.land/x/karabinerts@1.37.0/deno.ts"
   }
 }
