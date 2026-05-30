@@ -65,6 +65,23 @@ const createMods = () => {
         map('japanese_pc_katakana', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
       rule(
+        'REALFORCE 89U: use JIS keyboard as US layout',
+        ifDevice([{ vendor_id: 0x0853, product_id: 0x0200 }]),
+      ).manipulators([
+        // map('caps_lock', 'optionalAny').to('left_control'),
+        // map('left_control', 'optionalAny').to('caps_lock'),
+        // map('left_command', 'optionalAny').to('left_option'),
+        // map('grave_accent_and_tilde', 'optionalAny').to('escape'),
+        // map('escape', 'optionalAny').to('grave_accent_and_tilde'),
+        map('international3', 'optionalAny').to('backslash'),
+        map('international1', 'optionalAny').to('slash'),
+        map('non_us_pound', 'optionalAny').to('return_or_enter'),
+        map('left_option', 'any').to('left_command').toIfAlone('japanese_eisuu'),
+        map('japanese_pc_nfer', 'any').to('left_command').toIfAlone('japanese_eisuu'),
+        map('japanese_pc_xfer', 'any').to('right_command').toIfAlone('japanese_kana'),
+        map('japanese_pc_katakana', 'any').to('right_command').toIfAlone('japanese_kana'),
+      ]),
+      rule(
         'SlimBlade Pro EQ: swap mouse button 3 and 4 for KiCad and Autodesk apps',
         ifDevice([{ vendor_id: 0x047d, product_id: 0x80d4 }]),
         ifApp(['^org\\.kicad\\..*$', '^com\\.autodesk\\..*$']),
