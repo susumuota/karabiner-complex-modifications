@@ -40,6 +40,13 @@ const createMods = () => {
         map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
       rule(
+        'Jiffy 75 LP: map left_command to eisuu, right_command to kana',
+        ifDevice([{ vendor_id: 0x1915, product_id: 0xeeef }]),
+      ).manipulators([
+        map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
+        map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
+      ]),
+      rule(
         'MacBook Pro: use JIS keyboard as US layout',
         ifDevice([{ vendor_id: 0x05ac, product_id: 0x027e }]),
       ).manipulators([
