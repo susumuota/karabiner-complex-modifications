@@ -41,7 +41,10 @@ const createMods = () => {
       ]),
       rule(
         'Jiffy 75 LP: map left_command to eisuu, right_command to kana',
-        ifDevice([{ vendor_id: 0x1915, product_id: 0xeeef }]),
+        ifDevice([
+          { vendor_id: 0x1915, product_id: 0xeeef },
+          { vendor_id: 0x222c, product_id: 0x111c },
+        ]),
       ).manipulators([
         map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
         map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
