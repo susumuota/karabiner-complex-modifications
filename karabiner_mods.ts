@@ -8,13 +8,6 @@ const createMods = () => {
   return complexModifications(
     [
       rule(
-        'Claude Desktop: map return to shift+return',
-      ).manipulators([
-        map('return_or_enter')
-          .to('return_or_enter', 'shift')
-          .condition(ifApp('^com\\.anthropic\\.claudefordesktop$')),
-      ]),
-      rule(
         'All keyboards: map control+h to backspace',
       ).manipulators([
         map('h', 'control').to('delete_or_backspace'),
