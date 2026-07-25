@@ -15,6 +15,11 @@ const createMods = () => {
           .condition(ifApp('^com\\.anthropic\\.claudefordesktop$')),
       ]),
       rule(
+        'All keyboards: map control+h to backspace',
+      ).manipulators([
+        map('h', 'control').to('delete_or_backspace'),
+      ]),
+      rule(
         'Crush 80 and IQUNIX MQ80: map left_command to eisuu, right_command to kana',
         ifDevice([
           { vendor_id: 0x245a, product_id: 0x8276 },
