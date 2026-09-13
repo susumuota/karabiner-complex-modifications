@@ -97,6 +97,12 @@ const createMods = () => {
         mapPointingButton('button3').to({ pointing_button: 'button4' }),
         mapPointingButton('button4').to({ pointing_button: 'button3' }),
       ]),
+      rule(
+        'Codex: map control+b to left arrow',
+        ifApp(['^com\\.openai\\.codex$']),
+      ).manipulators([
+        map({ key_code: 'b', modifiers: { mandatory: ['control'] } }).to({ key_code: 'left_arrow' }),
+      ]),
     ],
     { 'basic.to_if_alone_timeout_milliseconds': 10000 }, // 10 seconds
   )
