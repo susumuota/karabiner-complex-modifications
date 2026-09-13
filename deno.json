@@ -2,8 +2,9 @@
   "tasks": {
     "dev": "deno run --watch --allow-env --allow-read --allow-write karabiner_mods.ts --writeToProfile",
     "json": "deno run karabiner_mods.ts > karabiner_mods.json",
-    "format": "deno fmt --check --ignore=README.md",
-    "lint": "deno lint"
+    "format": "deno fmt --check",
+    "lint": "deno lint",
+    "check": "deno check karabiner_mods.ts"
   },
   "fmt": {
     "lineWidth": 119,

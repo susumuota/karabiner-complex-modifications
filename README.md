@@ -31,10 +31,11 @@ deno run json
 
 ## Development
 
-Lint and format run automatically via [pre-commit](https://pre-commit.com/) (`pre-commit install` once after
-cloning), or manually:
+Lint and format run automatically via [pre-commit](https://pre-commit.com/) (`pre-commit install` once after cloning),
+or manually:
 
 ```shell
 deno run lint
 deno run format
+deno run check
 ```

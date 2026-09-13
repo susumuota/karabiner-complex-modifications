@@ -3,23 +3,34 @@ repos:
     rev: v6.0.0
     hooks:
       - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
       - id: end-of-file-fixer
       - id: check-json
+      - id: check-yaml
       - id: check-merge-conflict
       - id: check-added-large-files
       - id: check-case-conflict
       - id: detect-private-key
       - id: fix-byte-order-marker
       - id: mixed-line-ending
+        args: [--fix=lf]
   - repo: local
     hooks:
       - id: deno-fmt
         name: deno fmt
-        entry: deno fmt --check --ignore=README.md
+        entry: deno fmt --check
         language: system
+        files: \.(ts|json|md)$
         pass_filenames: false
       - id: deno-lint
         name: deno lint
         entry: deno lint
         language: system
+        files: \.ts$
+        pass_filenames: false
+      - id: deno-check
+        name: deno check
+        entry: deno check karabiner_mods.ts
+        language: system
+        files: \.(ts|json)$
         pass_filenames: false
