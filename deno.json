@@ -12,7 +12,7 @@
     "singleQuote": true
   },
   "imports": {
-    "@std/cli": "jsr:@std/cli@^1.0.29",
-    "karabiner.ts": "https://deno.land/x/karabinerts@1.37.0/deno.ts"
+    "@std/cli": "jsr:@std/cli@^1.0.32",
+    "karabiner.ts": "https://deno.land/x/karabinerts@1.38.0/deno.ts"
   }
 }
