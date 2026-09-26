@@ -90,6 +90,16 @@ const createMods = () => {
         map('japanese_pc_katakana', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
       rule(
+        'Crush 80 and IQUNIX MQ80: map F18 to left_command+F18',
+        ifDevice([
+          { vendor_id: 0x245a, product_id: 0x8276 },
+          { vendor_id: 0x320f, product_id: 0x5055 },
+          { vendor_id: 0x320f, product_id: 0x5088 },
+        ]),
+      ).manipulators([
+        map('f18', 'optionalAny').to('f18', 'left_command'),
+      ]),
+      rule(
         'SlimBlade Pro EQ: swap mouse button 3 and 4 for KiCad and Autodesk apps',
         ifDevice([{ vendor_id: 0x047d, product_id: 0x80d4 }]),
         ifApp(['^org\\.kicad\\..*$', '^com\\.autodesk\\..*$']),
