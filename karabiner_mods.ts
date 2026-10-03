@@ -38,6 +38,13 @@ const createMods = () => {
         map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
       ]),
       rule(
+        'Neo60 Core: map left_command to eisuu, right_command to kana',
+        ifDevice([{ vendor_id: 0x4e45, product_id: 0x3630 }]),
+      ).manipulators([
+        map('left_command', 'any').to('left_command').toIfAlone('japanese_eisuu'),
+        map('right_command', 'any').to('right_command').toIfAlone('japanese_kana'),
+      ]),
+      rule(
         'Jiffy 75 LP: map left_command to eisuu, right_command to kana',
         ifDevice([
           { vendor_id: 0x1915, product_id: 0xeeef },
